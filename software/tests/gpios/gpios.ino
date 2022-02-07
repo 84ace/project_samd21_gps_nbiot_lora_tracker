@@ -1,33 +1,43 @@
-/*
-  Blink
+//Addresses for reading
+#define LIS2DE12Address 0x19 //Device Address 
+#define reader 0x33
+#define writer 0x32
+#define OUT_X_H 0x29 // X acceleration register
+#define OUT_Y_H 0x2B
+#define OUT_Z_H 0x2D
+#define WHO_AM_I 0x0F
 
-  Turns an LED on for one second, then off for one second, repeatedly.
+#include "SoftwareI2C.h"
+SoftwareI2C softwarei2c;
 
-  Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO
-  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to
-  the correct LED pin independent of which board is used.
-  If you want to know what pin the on-board LED is connected to on your Arduino
-  model, check the Technical Specs of your board at:
-  https://www.arduino.cc/en/Main/Products
+void getData(byte *a)
+{
+  softwarei2c.beginTransmission(LIS2DE12Address); // Calling the sensor
+  softwarei2c.write(OUT_X_H);  // Moving Register pointer to OUT_X_H
+  softwarei2c.endTransmission(); // End
+  softwarei2c.requestFrom(LIS2DE12Address,1); //Request information I asked
+  *a = softwarei2c.read(); // Read and store data
+}
+void showData()
+{
+  byte aa;
+  int b1 = 0;
+  Serial.print(b1);
+  getData(&aa);
+  b1 = aa;
+  Serial.println(b1);
+  delay(500);
+}
 
-  modified 8 May 2014
-  by Scott Fitzgerald
-  modified 2 Sep 2016
-  by Arturo Guadalupi
-  modified 8 Sep 2016
-  by Colby Newman
-
-  This example code is in the public domain.
-
-  http://www.arduino.cc/en/Tutorial/Blink
-*/
 //GPS, PPS, uC, LoRa, LTE
-int gpios[] = {15, 14, 6, 7, 12};
+int gpios[] = {5, 36, 40, 21, 13};
 
 
 // the setup function runs once when you press reset or power the board
 void setup() {
+  delay(3000);
   Serial.begin(115200);
+  Serial.println("Setting up...");
 
   for (int i=0; i<5; i++){
     if (i < 3) {
@@ -38,10 +48,12 @@ void setup() {
     }
     digitalWrite(gpios[i], HIGH);
   }
+  softwarei2c.begin(26, 27);       // sda, scl
 }
 
 // the loop function runs over and over again forever
 void loop() {
+  Serial.println("Looping...");
   for (int i=0; i<5; i++){
     if (i < 3) {
       pinMode(gpios[i], INPUT_PULLUP);
@@ -53,6 +65,8 @@ void loop() {
     Serial.println(i);
     delay(100);
   }
+
+  showData();
 
   for (int i=0; i<5; i++){
     if (i < 3) {

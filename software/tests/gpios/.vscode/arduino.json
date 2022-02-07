@@ -1,0 +1,6 @@
+{
+    "board": "MattairTech_Arduino:samd:mattairtech_xeno_mini",
+    "port": "/dev/cu.usbserial-1430",
+    "sketch": "gpios.ino",
+    "configuration": "float=default,config=disabled,clock=crystal_32k,timer=timer_732Hz,cpu=samd21g18a,bootloader=8kb,serial=one_uart,usb=cdc"
+}

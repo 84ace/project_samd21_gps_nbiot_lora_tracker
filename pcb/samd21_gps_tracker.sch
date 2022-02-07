@@ -311,9 +311,9 @@ Text GLabel 2100 4400 0    50   Input ~ 0
 D12-MISO
 Text GLabel 2100 3700 0    50   Output ~ 0
 STATUS_LED
-Text GLabel 2100 4500 0    50   BiDi ~ 0
+Text GLabel 2100 4700 0    50   BiDi ~ 0
 SDA
-Text GLabel 2100 4600 0    50   Input ~ 0
+Text GLabel 2100 4800 0    50   Input ~ 0
 SCL
 Text GLabel 2100 4900 0    50   Input ~ 0
 USBD-
@@ -405,7 +405,7 @@ L Device:D_Small D3
 U 1 1 60F38194
 P 2850 8650
 F 0 "D3" V 2950 8500 50  0000 L CNN
-F 1 "D_Small" H 2600 8800 50  0000 L CNN
+F 1 "D_Small" V 3300 8475 50  0000 L CNN
 F 2 "Diode_SMD:D_SMA" V 2850 8650 50  0001 C CNN
 F 3 "~" V 2850 8650 50  0001 C CNN
 F 4 "C8678" H 2850 8650 50  0001 C CNN "lcsc_part_number"
@@ -684,7 +684,7 @@ Text GLabel 2100 3000 0    50   Input ~ 0
 INT2
 Wire Wire Line
 	11250 1600 11350 1600
-Text GLabel 2250 8050 2    50   Input ~ 0
+Text GLabel 2050 8350 2    50   Input ~ 0
 ~EN
 Text GLabel 5650 1200 2    50   Input ~ 0
 INT2
@@ -2689,9 +2689,9 @@ SIM_PWRKEY
 Text GLabel 13250 5650 1    50   Input ~ 0
 SIM_PWRKEY
 NoConn ~ 13350 5650
-Text GLabel 2100 4800 0    50   Input ~ 0
+Text GLabel 2100 4600 0    50   Input ~ 0
 SIM_RXD
-Text GLabel 2100 4700 0    50   Input ~ 0
+Text GLabel 2100 4500 0    50   Input ~ 0
 SIM_TXD
 NoConn ~ 7550 5300
 Wire Notes Line
@@ -3272,16 +3272,42 @@ $EndComp
 Connection ~ 3100 1800
 Text Notes 9600 8400 0    50   ~ 0
 Unfuck the CAN tranceiver you tard. Needs to be 3.3v
-Wire Wire Line
-	1950 8350 1950 8050
 Text Notes 8400 10200 0    50   ~ 0
 C7244 - Plug
-Wire Wire Line
-	1950 8050 2250 8050
 Wire Wire Line
 	7000 1100 7000 1000
 Wire Wire Line
 	7000 1000 7150 1000
 Wire Wire Line
 	9400 4750 9550 4750
+$Comp
+L Device:R_Small R?
+U 1 1 61627045
+P 2000 8075
+F 0 "R?" H 2100 8175 50  0000 L CNN
+F 1 "10k" H 2100 8075 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2000 8075 50  0001 C CNN
+F 3 "~" H 2000 8075 50  0001 C CNN
+F 4 "C25804" H 2000 8075 50  0001 C CNN "lcsc_part_number"
+	1    2000 8075
+	1    0    0    -1  
+$EndComp
+$Comp
+L MAX17260:3V3 #PWR?
+U 1 1 6162704B
+P 2000 7975
+F 0 "#PWR?" H 2000 8075 40  0001 C CNN
+F 1 "3V3" H 2050 8175 40  0000 C CNN
+F 2 "" H 2000 7975 60  0000 C CNN
+F 3 "" H 2000 7975 60  0000 C CNN
+	1    2000 7975
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 8350 2000 8350
+Wire Wire Line
+	2000 8350 2000 8175
+Wire Wire Line
+	2050 8350 2000 8350
+Connection ~ 2000 8350
 $EndSCHEMATC

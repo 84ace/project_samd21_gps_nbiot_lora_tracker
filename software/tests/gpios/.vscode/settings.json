@@ -1,0 +1,14 @@
+{
+    "arduino.additionalUrls": "https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json",
+    "arduino.logLevel": "info", 
+    "arduino.enableUSBDetection": true, 
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "files.associations": {
+        "array": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "initializer_list": "cpp"
+    }
+}
