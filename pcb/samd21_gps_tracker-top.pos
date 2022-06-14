@@ -1,0 +1,9 @@
+### Module positions - created on Wednesday, 08 June 2022 at 01:58:31 pm ###
+### Printed by Pcbnew version (6.99.0-1917-g23fb4c7433)
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val         Package                PosX       PosY       Rot  Side
+J6        U.FL-R-SMT  U.FL-R-SMT          15.5000     6.0000  180.0000  top
+U4        L96-M33     XCVR_L96-M33        46.5000    31.5000  180.0000  top
+U8        SIM7020E    SIMCom_SIM800C      26.5000    14.5000  180.0000  top
+## End

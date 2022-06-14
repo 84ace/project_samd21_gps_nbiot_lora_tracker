@@ -1,0 +1,46 @@
+
+# DSMBYFC (SAMD21)
+# ------------------------------
+adafruit_feather_m0_express.name=DSMBYFC
+adafruit_feather_m0_express.vid.0=0x239A
+adafruit_feather_m0_express.pid.0=0x801B
+adafruit_feather_m0_express.vid.1=0x239A
+adafruit_feather_m0_express.pid.1=0x001B
+adafruit_feather_m0_express.upload.tool=bossac
+adafruit_feather_m0_express.upload.protocol=sam-ba
+adafruit_feather_m0_express.upload.maximum_size=262144
+adafruit_feather_m0_express.upload.offset=0x2000
+adafruit_feather_m0_express.upload.use_1200bps_touch=true
+adafruit_feather_m0_express.upload.wait_for_upload_port=true
+adafruit_feather_m0_express.upload.native_usb=true
+adafruit_feather_m0_express.build.mcu=cortex-m0plus
+adafruit_feather_m0_express.build.f_cpu=48000000L
+adafruit_feather_m0_express.build.usb_product="DSMBYFC"
+adafruit_feather_m0_express.build.usb_manufacturer="ACE's ELECTRONICS"
+adafruit_feather_m0_express.build.board=adafruit_feather_m0_express
+adafruit_feather_m0_express.build.core=arduino
+adafruit_feather_m0_express.build.extra_flags=-DARDUINO_SAMD_ZERO -DARDUINO_SAMD_FEATHER_M0 -DARM_MATH_CM0PLUS -DADAFRUIT_FEATHER_M0_EXPRESS -D__SAMD21G18A__ {build.usb_flags}
+adafruit_feather_m0_express.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+adafruit_feather_m0_express.build.openocdscript=openocd_scripts/arduino_zero.cfg
+adafruit_feather_m0_express.build.variant=feather_m0_express
+adafruit_feather_m0_express.build.variant_system_lib=
+adafruit_feather_m0_express.build.vid=0x239A
+adafruit_feather_m0_express.build.pid=0x801B
+adafruit_feather_m0_express.bootloader.tool=openocd
+adafruit_feather_m0_express.bootloader.file=featherM0/samr21_sam_ba
+adafruit_feather_m0_express.menu.opt.small=Small (-Os) (standard)
+adafruit_feather_m0_express.menu.opt.small.build.flags.optimize=-Os
+adafruit_feather_m0_express.menu.opt.fast=Fast (-O2)
+adafruit_feather_m0_express.menu.opt.fast.build.flags.optimize=-O2
+adafruit_feather_m0_express.menu.opt.faster=Faster (-O3)
+adafruit_feather_m0_express.menu.opt.faster.build.flags.optimize=-O3
+adafruit_feather_m0_express.menu.opt.fastest=Fastest (-Ofast)
+adafruit_feather_m0_express.menu.opt.fastest.build.flags.optimize=-Ofast
+adafruit_feather_m0_express.menu.opt.dragons=Here be dragons (-Ofast -funroll-loops)
+adafruit_feather_m0_express.menu.opt.dragons.build.flags.optimize=-Ofast -funroll-loops
+adafruit_feather_m0_express.menu.usbstack.arduino=Arduino
+adafruit_feather_m0_express.menu.usbstack.tinyusb=TinyUSB
+adafruit_feather_m0_express.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+adafruit_feather_m0_express.menu.debug.off=Off
+adafruit_feather_m0_express.menu.debug.on=On
+adafruit_feather_m0_express.menu.debug.on.build.flags.debug=-g
